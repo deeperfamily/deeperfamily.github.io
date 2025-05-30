@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deeper Family Ministry - Plateforme d'Adoration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/main.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Navigation transitions */
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-scrolled .nav-text {
+            color: #374151 !important; /* text-gray-700 */
+        }
+
+        .nav-scrolled .nav-text:hover {
+            color: #7c3aed !important; /* text-purple-600 */
+        }
+
+        /* Language switcher styles */
+        .lang-active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-scrolled .lang-active {
+            background: rgba(124, 58, 237, 0.1);
+            border-color: #7c3aed;
+        }
+                
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 glass-effect transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden bg-white p-1">
+                        <img src="img/logo.png" alt="Deeper Family Ministry Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold nav-text text-white">Deeper Family</h1>
+                        <p class="text-xs nav-text text-gray-200">Ministry</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="nav-text text-white hover:text-purple-300 transition duration-300">Accueil</a>
+                    <a href="#vision" class="nav-text text-white hover:text-purple-300 transition duration-300">Vision</a>
+                    <a href="#visionnaire" class="nav-text text-white hover:text-purple-300 transition duration-300">Visionnaire</a>
+                    <a href="#galerie" class="nav-text text-white hover:text-purple-300 transition duration-300">Galerie</a>
+                    <a href="#agenda" class="nav-text text-white hover:text-purple-300 transition duration-300">Agenda</a>
+                    <a href="#contact" class="nav-text text-white hover:text-purple-300 transition duration-300">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="flex items-center space-x-2 ml-4 pl-4 border-l border-white border-opacity-30">
+                        <a href="index.html" class="nav-text text-white hover:text-purple-300 transition duration-300 px-2 py-1 rounded border border-white border-opacity-50 text-sm font-medium">
+                            FR
+                        </a>
+                        <a href="index_en.html" class="nav-text text-white hover:text-purple-300 transition duration-300 px-2 py-1 rounded hover:border-white hover:border-opacity-50 text-sm">
+                            EN
+                        </a>
+                    </div>
+                </div>
+                
+                
+                <div class="md:hidden flex items-center space-x-3">
+                    <!-- Language Switcher Mobile -->
+                    <div class="flex items-center space-x-1">
+                        <a href="index.html" class="nav-text text-white px-2 py-1 rounded border border-white border-opacity-50 text-xs font-medium">
+                            FR
+                        </a>
+                        <a href="index_en.html" class="nav-text text-white px-2 py-1 rounded hover:border-white hover:border-opacity-50 text-xs">
+                            EN
+                        </a>
+                    </div>
+                    <button onclick="toggleMobileMenu()" class="nav-text text-white">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="toggleMobileMenu()"></div>
+        <div class="absolute right-0 top-0 h-full w-80 bg-white shadow-xl">
+            <div class="flex items-center justify-between p-6 border-b">
+                <div class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="Logo" class="w-8 h-8">
+                    <span class="font-bold text-gray-800">Deeper Family</span>
+                </div>
+                <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <nav class="p-6">
+                <div class="space-y-4">
+                    <a href="#accueil" onclick="toggleMobileMenu()" class="block text-gray-700 hover:text-purple-600 transition duration-300 py-2 border-b border-gray-100">Accueil</a>
+                    <a href="#vision" onclick="toggleMobileMenu()" class="block text-gray-700 hover:text-purple-600 transition duration-300 py-2 border-b border-gray-100">Vision</a>
+                    <a href="#visionnaire" onclick="toggleMobileMenu()" class="block text-gray-700 hover:text-purple-600 transition duration-300 py-2 border-b border-gray-100">Visionnaire</a>
+                    <a href="#galerie" onclick="toggleMobileMenu()" class="block text-gray-700 hover:text-purple-600 transition duration-300 py-2 border-b border-gray-100">Galerie</a>
+                    <a href="#agenda" onclick="toggleMobileMenu()" class="block text-gray-700 hover:text-purple-600 transition duration-300 py-2 border-b border-gray-100">Agenda</a>
+                    <a href="#contact" onclick="toggleMobileMenu()" class="block text-gray-700 hover:text-purple-600 transition duration-300 py-2 border-b border-gray-100">Contact</a>
+                </div>
+                
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <p class="text-sm text-gray-500 mb-3">Langue / Language</p>
+                    <div class="flex space-x-3">
+                        <a href="index.html" class="px-3 py-2 bg-purple-600 text-white rounded-lg text-sm font-medium">FR</a>
+                        <a href="index_en.html" class="px-3 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50">EN</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen hero-bg flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        
+        <div class="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+            <div class="animate-float mb-8">
+                
+                <div class="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <img src="img/logo.png" alt="Deeper Family Ministry Logo" class="w-full h-full object-contain">
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in">
+                Deeper Family Ministry
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in">
+                Nous sommes une famille, une plateforme de louange et d'adoration, un rendez-vous de recharge et de rafraîchissement spirituel par l'adoration.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+                <a href="#cta" class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition duration-300 transform hover:scale-105 inline-block">
+                    Rejoindre la famille
+                </a>
+                <a href="#vision" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition duration-300 inline-block">
+                    Découvrir notre vision
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-6">Une Famille Unie</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Toutes nos activités sont gratuites, ouvertes à toutes et à tous, sans distinction d'origine, de culture ou de parcours, dans un esprit d'amour fraternel et de respect mutuel, reflétant la diversité du Corps de Christ.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Communauté</h3>
+                    <p class="text-gray-600">Un espace où chacun trouve sa place dans l'amour et l'acceptation mutuelle.</p>
+                </div>
+                
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Adoration</h3>
+                    <p class="text-gray-600">Des moments profonds de louange et d'adoration authentique.</p>
+                </div>
+                
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-hands text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Service</h3>
+                    <p class="text-gray-600">Une mission de service et d'amour envers notre prochain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-6">Notre Vision</h2>
+                <p class="text-2xl font-semibold text-gray-700 mb-8">Rassembler - Impacter - Influencer (R.I.I)</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-people-group text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-600">Rassembler</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Notre mission est de rassembler des personnes de tous horizons, indépendamment de leur appartenance ecclésiale, dans un esprit d'unité, de foi et de service. Nous croyons que l'Évangile transcende les dénominations.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-600">Impacter</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nos rencontres sont des moments d'adoration profonde où nos cœurs rencontrent le cœur de Dieu. Notre mission est d'impacter les vies par une adoration profonde et authentique.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-ripple text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Influencer</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Notre mission est d'inspirer et de fortifier la vie de culte au sein des foyers et des communautés, afin que chaque personne devienne une source d'influence spirituelle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visionnaire Section -->
+    <section id="visionnaire" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-6">Le Visionnaire</h2>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Chiqo Kabasu</h3>
+                    
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Fondateur de <strong>Deeper Family Ministry</strong>, Chiqo Kabasu porte depuis de nombreuses années un profond amour pour l'adoration. Auteur compositeur de plusieurs cantiques chrétiens qui sont une bénédiction pour le corps du Christ dans la francophonie.
+                    </p>
+                    
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        En 2021, dans un temps de prière, il reçoit de Dieu une vision claire : celle de fonder Deeper Family Ministry, un mouvement dédié à restaurer l'adoration authentique au sein des foyers et des assemblées.
+                    </p>
+                    
+                    <blockquote class="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-2xl border-l-4 border-purple-500">
+                        <p class="text-lg italic text-gray-700 mb-4">
+                            "Adorer ne se définit pas d'abord par dire ce que Dieu est, mais plutôt par être ce que Dieu est. L'adoration n'est donc pas une activité, mais un style de vie."
+                        </p>
+                        <cite class="text-sm font-semibold text-purple-600">— Chiqo Kabasu</cite>
+                    </blockquote>
+                </div>
+                
+                <div class="relative">
+                    <div class="w-96 h-96 mx-auto relative p-4">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 p-2">
+                            <img src="img/chiqo.png" alt="Chiqo Kabasu - Visionnaire" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-20 animate-pulse"></div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full opacity-30 animate-pulse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Photos Section -->
+    <section id="galerie" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-6">Notre Famille en Images</h2>
+                <p class="text-xl text-gray-600">Découvrez les moments précieux de notre communauté</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-max">
+                <!-- Photo paysage 1 -->
+                <div class="col-span-2 row-span-1">
+                    <div class="w-full h-48 bg-gradient-to-br from-purple-200 to-blue-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image1.jpg" alt="Moment de louange" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo portrait 1 -->
+                <div class="col-span-1 row-span-2">
+                    <div class="w-full h-96 bg-gradient-to-br from-blue-200 to-indigo-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image10.jpg" alt="Adoration" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo portrait 2 -->
+                <div class="col-span-1 row-span-2">
+                    <div class="w-full h-96 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image7.jpg" alt="Communion" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo paysage 2 -->
+                <div class="col-span-2 row-span-1">
+                    <div class="w-full h-48 bg-gradient-to-br from-purple-200 to-pink-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image2.jpg" alt="Rassemblement" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo paysage 3 -->
+                <div class="col-span-2 row-span-1">
+                    <div class="w-full h-48 bg-gradient-to-br from-pink-200 to-red-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image3.jpg" alt="Célébration" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo paysage 4 -->
+                <div class="col-span-2 row-span-1">
+                    <div class="w-full h-48 bg-gradient-to-br from-green-200 to-blue-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image4.jpg" alt="Prière" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo portrait 3 -->
+                <div class="col-span-1 row-span-2">
+                    <div class="w-full h-96 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image9.jpg" alt="Témoignage" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo portrait 4 -->
+                <div class="col-span-1 row-span-2">
+                    <div class="w-full h-96 bg-gradient-to-br from-teal-200 to-cyan-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image6.jpg" alt="Louange" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo paysage 5 -->
+                <div class="col-span-2 row-span-1">
+                    <div class="w-full h-48 bg-gradient-to-br from-cyan-200 to-blue-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image5.jpg" alt="Unité" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo paysage 6 -->
+                <div class="col-span-2 row-span-1">
+                    <div class="w-full h-48 bg-gradient-to-br from-violet-200 to-purple-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image6.jpg" alt="Fraternité" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Photo paysage 7 -->
+                <div class="col-span-2 row-span-1">
+                    <div class="w-full h-48 bg-gradient-to-br from-rose-200 to-pink-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/image11.jpg" alt="Joie" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <!-- Photo paysage 8 -->
+                <div class="col-span-2 row-span-1">
+                    <div class="w-full h-48 bg-gradient-to-br from-rose-200 to-pink-200 rounded-2xl overflow-hidden card-hover">
+                        <img src="img/main.jpg" alt="Joie" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-6">Agenda 2025</h2>
+                <p class="text-xl text-gray-600">Retiens ces dates importantes</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-calendar-alt text-green-500 text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Été 2025</h3>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Tournée d'été</h4>
+                    <p class="text-gray-600">Juillet - Août 2025</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-music text-blue-500 text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">16 Août</h3>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Soirée d'adoration</h4>
+                    <p class="text-gray-600">2025</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hands text-purple-500 text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">25 Octobre</h3>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Soirée d'adoration</h4>
+                    <p class="text-gray-600">2025</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border-l-4 border-gold-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-yellow-500 text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">27 Décembre</h3>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Célébration fin d'année</h4>
+                    <p class="text-gray-600">2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-8">Rejoignez Notre Famille</h2>
+            <p class="text-xl text-white mb-12 max-w-2xl mx-auto">
+                Faites partie de cette belle aventure spirituelle et contribuez à l'édification du Corps de Christ.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl glass-effect">
+                    <i class="fas fa-hands-helping text-4xl text-white mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">Devenir Bénévole</h3>
+                    <p class="text-white mb-6">Rejoignez notre équipe de bénévoles et participez activement à notre mission.</p>
+                    <a href="https://docs.google.com/forms/d/1kLcbQA5NtWkSE_Oig3vdL56fnM25qez1fKgPUHM0vdA/viewform" target="_blank" class="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 inline-block">
+                        S'inscrire
+                    </a>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl glass-effect">
+                    <i class="fas fa-heart text-4xl text-white mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">Faire un Don</h3>
+                    <p class="text-white mb-6">Soutenez notre ministère par vos offrandes volontaires.</p>
+                    <div class="text-white">
+                        <p class="mb-2"><strong>PayPal / Interac:</strong></p>
+                        <p class="bg-white bg-opacity-20 px-4 py-2 rounded-lg">offrande@deeperfamily.ca</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Social Media -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-6">Restez Connectés</h2>
+                <p class="text-xl text-gray-600">Suivez-nous sur nos réseaux sociaux</p>
+            </div>
+            
+            <div class="flex justify-center space-x-8">
+                <!-- Icône Email -->
+                <a href="mailto:contact@deeperfamily.ca?subject=Contact depuis le site web" 
+                    class="w-16 h-16 bg-gradient-to-r from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center hover:scale-110 transition duration-300">
+                    <i class="fas fa-envelope text-white text-2xl"></i>
+                </a>
+
+                <a href="https://www.instagram.com/deeper.family/" target="_blank" class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center hover:scale-110 transition duration-300">
+                    <i class="fab fa-instagram text-white text-2xl"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/deeperfamily/" target="_blank" class="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center hover:scale-110 transition duration-300">
+                    <i class="fab fa-facebook text-white text-2xl"></i>
+                </a>
+                
+                <a href="https://www.tiktok.com/@deeper.family" target="_blank" class="w-16 h-16 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center hover:scale-110 transition duration-300">
+                    <i class="fab fa-tiktok text-white text-2xl"></i>
+                </a>
+                
+                <a href="https://www.youtube.com/@deeperfamily" target="_blank" class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl flex items-center justify-center hover:scale-110 transition duration-300">
+                    <i class="fab fa-youtube text-white text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-4 mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Deeper Family Ministry</h3>
+                        <p class="text-gray-400">Une plateforme d'adoration</p>
+                    </div>
+                </div>
+                
+                <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+                    Rassembler - Impacter - Influencer dans l'amour du Christ
+                </p>
+                
+                <div class="border-t border-gray-800 pt-6">
+                    <p class="text-gray-500 mb-2">&copy; 2025 Deeper Family Ministry. Tous droits réservés.</p>
+                    <p class="text-gray-600 text-sm">Site construit par <a href="https://sionisrael.com" target="_blank" class="text-purple-400 hover:text-purple-300 transition duration-300">Besionisrael</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const heroSection = document.getElementById('accueil');
+            const heroHeight = heroSection.offsetHeight;
+            
+            if (window.scrollY > heroHeight - 100) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Détection iframe et correction
+        if (window.self !== window.top) {
+            // Site dans une iframe (masqué par GoDaddy)
+            document.documentElement.style.width = '100vw';
+            document.body.style.width = '100vw';
+            
+            // Force mobile detection for iframe
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.screen.width <= 768;
+            if (isMobile) {
+                document.documentElement.classList.add('mobile-forced');
+            }
+        }
+    </script>
+</body>
+</html>
